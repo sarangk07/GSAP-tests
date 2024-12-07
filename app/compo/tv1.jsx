@@ -51,7 +51,7 @@ function BenTen() {
                 trigger: triggerRef.current,
                 pin: true,
                 start: "top top",
-                end: "+=300%",
+                end: "+=1300%",
                 scrub: 1,
                 // markers:true
             },
@@ -87,28 +87,28 @@ function BenTen() {
 //BEN 10 text animation
         .to(textCon1.current, {
             scale: 7,
-            opacity: 2,
+            opacity: 1,
         }, "-=1")
         .to(textCon1.current, {
             y:-1500,
             ease:'power3.inOut'
-        },1)
+        },2)
 
 
 //ben10 [details] component/div animtaion
         .to(textCon2.current,{
             backgroundColor:'green',
-            opacity:2,
+            opacity:1,
             paddingLeft:'20px',
             paddingRight:'20px',
             ease:'power4.in',
             scale:4,
-        }, "<")
+        }, "+=0")
         .to(textCon2.current,{
             scale:17,
             opacity:0,
             ease:'power4.inOut',
-        },2)
+        },"+=1")
 
 
 //alien intro text
@@ -116,24 +116,25 @@ function BenTen() {
             display:'flex',
             scale: 10,
             opacity: 0,
-        },2)
+        },"+=0")
         
 
+//alien1       
         .fromTo(Ali1.current,{
             y:'-1500',
             opacity:0
         },{
             y:'0',
-            opacity:2
+            opacity:1
         })
         .fromTo(Ali1.current,{
             
             y:'0',
-            opacity:2
+            opacity:1
         },{
-            y:'1500',
+            y:'1000',
             opacity:0
-        },"+=3")
+        },"+=2")
 
 
 
@@ -143,7 +144,7 @@ function BenTen() {
 //final animation text
         .to(intro1.current,{
             backgroundColor:'white',
-            opacity:2, 
+            opacity:1, 
         },"+=1")
 
 
@@ -190,11 +191,12 @@ function BenTen() {
                 className="imageBoard relative flex items-center justify-center h-screen w-full overflow-hidden"
             >
                 <div 
-                    ref={textCon1} 
-                    className="absolute w-full h-screen flex items-center justify-center text-black font-bold text-[20px] opacity-0"
-                >
-                    BEN <span className='text-green-600 ml-1'> 10</span>                
-                </div>
+    ref={textCon1} 
+    className="absolute w-full  h-screen font-sans flex items-center justify-center text-green-400 font-bold  text-[20px] opacity-0"
+    style={{ WebkitTextStroke: '0.5px #3f3f46', color: '' }} 
+>
+    BEN <span className='text-white ml-1 '>10</span>                
+</div>
 
                 <div ref={textCon2}
                     className='absolute w-full h-screen flex flex-col items-center justify-center text-black font-bold  text-[8px] opacity-0'>
@@ -206,8 +208,8 @@ function BenTen() {
                         <img className='w-20 ' src="https://i.pinimg.com/736x/30/26/6f/30266fb72b6ba06968f300be6184ad61.jpg"  alt="" />
                     </div>
                     <div className='flex flex-col  lg:w-1/2 justify-center lg:items-start lg:pl-5 items-center flex-shrink'>
-                        <h2 className='font-bold z-10 '>Ben 10</h2>  
-                        <p className='text-wrap z-10 text-[4px] w-[30%]'>The Ben 10 franchise is a widely popular animated series created by Man of Action and produced by Cartoon Network Studios, first premiering in 2005.</p>
+                        <h2 className='font-bold z-10 '>Ben 10 </h2>  
+                        <p className='text-wrap z-10 text-[4px] w-[20%]'>The Ben 10 franchise is a widely popular animated series created by Man of Action and produced by Cartoon Network Studios, first premiering in 2005.</p>
                     </div>
                    
                 </div>
@@ -220,13 +222,13 @@ function BenTen() {
                 </div>
 
 
-
-                <div ref={Ali1}  className='absolute opacity-0 flex w-full h-screen  items-center justify-center text-black font-bold  '>
+{/* a1 */}
+                <div ref={Ali1}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-black font-bold  '>
                     <div>
                         <img src="https://i.pinimg.com/236x/e5/6c/4a/e56c4a20c3f218032abd0bd2a24997a9.jpg" alt="" />
                     </div>
                     <div>
-1
+1   
                     </div>
                 </div>
 
