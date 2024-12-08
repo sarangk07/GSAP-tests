@@ -51,7 +51,7 @@ function BenTen() {
                 trigger: triggerRef.current,
                 pin: true,
                 start: "top top",
-                end: "+=1300%",
+                end: "+=1800%",
                 scrub: 1,
                 // markers:true
             },
@@ -92,7 +92,7 @@ function BenTen() {
         .to(textCon1.current, {
             y:-1500,
             ease:'power3.inOut'
-        },2)
+        },1)
 
 
 //ben10 [details] component/div animtaion
@@ -103,7 +103,7 @@ function BenTen() {
             paddingRight:'20px',
             ease:'power4.in',
             scale:4,
-        }, "+=0")
+        }, "-=0.3")
         .to(textCon2.current,{
             scale:17,
             opacity:0,
@@ -125,7 +125,8 @@ function BenTen() {
             opacity:0
         },{
             y:'0',
-            opacity:1
+            opacity:1,
+            
         })
         .fromTo(Ali1.current,{
             
@@ -134,10 +135,171 @@ function BenTen() {
         },{
             y:'1000',
             opacity:0
-        },"+=2")
+        },"+=1")
 
+//alien2       
+        .fromTo(Ali2.current,{
+            scale:0,
+            opacity:0
+        },{
+            scale:0.7,
+            opacity:1,
+            
+        })
+        .fromTo(Ali2.current,{
+            
+            scale:0.7,
+            opacity:1
+        },{
+            y:-1000,
+            opacity:0
+        },"+=1")
 
+//alien3      
+        .fromTo(Ali3.current,{
+            y:'-1500',
+            opacity:0
+        },{
+            y:'0',
+            opacity:1,
+            
+        })
+        .fromTo(Ali3.current,{
+            
+            y:'0',
+            opacity:1
+        },{
+            y:'1000',
+            opacity:0
+        },"+=1")
 
+//alien4     
+        .fromTo(Ali4.current,{
+            scale:0,
+            opacity:0
+        },{
+            scale:0.7,
+            opacity:1,
+
+        })
+        .fromTo(Ali4.current,{
+
+            scale:0.7,
+            opacity:1
+        },{
+            y:-1000,
+            opacity:0
+        },"+=1")
+
+//alien5      
+        .fromTo(Ali5.current,{
+            y:'-1500',
+            opacity:0
+        },{
+            y:'0',
+            opacity:1,
+            
+        })
+        .fromTo(Ali5.current,{
+            
+            y:'0',
+            opacity:1
+        },{
+            y:'1000',
+            opacity:0
+        },"+=1")
+
+//alien6       
+        .fromTo(Ali6.current,{
+            scale:0,
+            opacity:0
+        },{
+            scale:0.7,
+            opacity:1,
+
+        })
+        .fromTo(Ali6.current,{
+
+            scale:0.7,
+            opacity:1
+        },{
+            y:-1000,
+            opacity:0
+        },"+=1")
+
+//alien7      
+        .fromTo(Ali7.current,{
+            y:'-1500',
+            opacity:0
+        },{
+            y:'0',
+            opacity:1,
+            
+        })
+        .fromTo(Ali7.current,{
+            
+            y:'0',
+            opacity:1
+        },{
+            y:'1000',
+            opacity:0
+        },"+=1")
+
+//alien8    
+        .fromTo(Ali8.current,{
+            scale:0,
+            opacity:0
+        },{
+            scale:0.7,
+            opacity:1,
+
+        })
+        .fromTo(Ali8.current,{
+
+            scale:0.7,
+            opacity:1
+        },{
+            y:-1000,
+            opacity:0
+        },"+=1")
+
+//alien9       
+        .fromTo(Ali9.current,{
+            y:'-1500',
+            opacity:0
+        },{
+            y:'0',
+            opacity:1,
+            
+        })
+        .fromTo(Ali9.current,{
+            
+            y:'0',
+            opacity:1
+        },{
+            y:'1000',
+            opacity:0
+        },"+=1")
+
+//alien10      
+        .fromTo(Ali10.current,{
+            scale:0,
+            opacity:0
+        },{
+            scale:0.7,
+            opacity:1,
+
+        })
+        .fromTo(Ali10.current,{
+
+            scale:0.7,
+            opacity:1
+        },{
+            y:-1000,
+            opacity:0
+        },"+=1")
+
+//-------------------------------
 
 
 
@@ -160,7 +322,7 @@ function BenTen() {
     }, [])
 
     return (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden bg-zinc-900">
             <div className="upper-container fixed w-full h-screen flex flex-col items-center justify-center font-light">
                 
 {/* green roundes----- */}
@@ -192,10 +354,10 @@ function BenTen() {
             >
                 <div 
     ref={textCon1} 
-    className="absolute w-full  h-screen font-sans flex items-center justify-center text-green-400 font-bold  text-[20px] opacity-0"
-    style={{ WebkitTextStroke: '0.5px #3f3f46', color: '' }} 
+    className="absolute w-full  h-screen  font-sans flex items-center justify-center text-green-600 font-bold  text-[20px] opacity-0"
+    
 >
-    BEN <span className='text-white ml-1 '>10</span>                
+    BEN <span className='text-zinc-200 ml-1 '>10</span>                
 </div>
 
                 <div ref={textCon2}
@@ -217,22 +379,105 @@ function BenTen() {
                 </div>
 
 
-                <div ref={aliText}  className='absolute hidden w-full h-screen  items-center justify-center text-black font-bold text-[20px] '>
+                <div ref={aliText}  className='absolute hidden w-full h-screen  items-center justify-center text-zinc-100 font-bold text-[20px] '>
                     Here is Aliens
                 </div>
 
 
 {/* a1 */}
-                <div ref={Ali1}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-black font-bold  '>
+                <div ref={Ali1}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-orange-400 font-bold  '>
                     <div>
-                        <img src="https://i.pinimg.com/236x/e5/6c/4a/e56c4a20c3f218032abd0bd2a24997a9.jpg" alt="" />
+                        <img src="./B10/Heatblast.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(251 146 60))'}} />
                     </div>
-                    <div>
-1   
+                    <div className='font-mono'>
+                        Heat blast
                     </div>
                 </div>
 
+                <div ref={Ali2}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-green-400 font-bold  '>
+                    <div>
+                        <img src="./B10/Wildvine.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(74 222 128))'}} />
+                    </div>
+                    <div className='font-mono text-2xl'>
+                    Wildvine
+                    </div>
+                </div>
 
+                <div ref={Ali3}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-emerald-400 font-bold  '>
+                    <div>
+                        <img src="./B10/Diamondhead.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(52 211 153))'}} />
+                    </div>
+                    <div className='font-mono'>
+                    Diamondhead
+                    </div>
+                </div>
+
+                <div ref={Ali4}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-cyan-500 font-bold  '>
+                    <div>
+                        <img src="./B10/xlr8.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(6 182 212))'}} />
+                    </div>
+                    <div className='font-mono'>
+                    XLR8
+                    </div>
+                </div>
+
+                <div ref={Ali5}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-orange-400 font-bold  '>
+                    <div>
+                        <img src="./B10/Grey_Matter.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(251 146 60))'}} />
+                    </div>
+                    <div className='font-mono'>
+                    Grey Matter
+                    </div>
+                </div>
+
+                <div ref={Ali6}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-red-700 font-bold  '>
+                    <div>
+                        <img src="./B10/Four_Arms.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(185 28 28))'}} />
+                    </div>
+                    <div className='font-mono'>
+                    Four Arms
+                    </div>
+                </div>
+
+                <div ref={Ali7}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-green-800 font-bold  '>
+                    <div>
+                        <img src="./B10/Stinkfly.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(22 101 52))'}} />
+                    </div>
+                    <div className='font-mono'>
+                    Stinkfly
+                    </div>
+                </div>
+
+                <div ref={Ali8}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-yellow-400 font-bold  '>
+                    <div>
+                        <img src="./B10/Cannonbolt.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(250 204 21))'}} />
+                    </div>
+                    <div className='font-mono'>
+                    Cannonbolt
+                    </div>
+                </div>
+
+                <div ref={Ali9}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-green-500 font-bold  '>
+                    <div>
+                        <img src="./B10/Upgrade.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(34 197 94))'}} />
+                    </div>
+                    <div className='font-mono'>
+                    Upgrade
+                    </div>
+                </div>
+
+                <div ref={Ali10}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-zinc-700 font-bold  '>
+                    <div>
+                        <img src="./B10/Ghostfreak.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(63 63 70))'}} />
+                    </div>
+                    <div className='font-mono'>
+                    Ghostfreak
+                    </div>
+                </div>
+
+                
+
+{/* ------------------- */}
 
 
 
