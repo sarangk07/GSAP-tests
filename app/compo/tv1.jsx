@@ -552,7 +552,7 @@ function BenTen() {
                     </div> */}
                 </div>
 
-                <div ref={logo2} className='bg-green-400 opacity-0 w-[25rem] h-[25rem] rounded-full border-8 border-white'>
+                <div ref={logo2} className='bg-green-400 opacity-0 w-[20rem] h-[20rem] rounded-full border-8 border-white'>
                     <div className='w-full z-0 flex overflow-hidden bg-transparent h-full rounded-full border-[20px] border-zinc-900'>
                         <div className='relative rounded-md top-[55%] w-1/2 h-full right-4  bg-black '/>
                         <div className='relative rounded-md -top-[55%] w-1/2 h-full left-4  bg-black '/>
