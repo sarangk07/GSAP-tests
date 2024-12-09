@@ -24,6 +24,8 @@ function BenTen() {
     const Ali9 = useRef(null);
     const Ali10 = useRef(null);
 
+    const logo2 = useRef(null)
+
 
 
     const divRefs = useRef([]);
@@ -44,12 +46,22 @@ function BenTen() {
             ease:'bounce.inOut'
         })
 
+//ben10 logo2  effect
+        gsap.to(logo2.current,{
+            backgroundColor:'green',
+            repeat:-1,
+            duration:1,
+            borderColor:'#4ade80',
+            // rotate:'1.5rad',
+            ease:'power2.inOut'
+        })
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: triggerRef.current,
                 pin: true,
                 start: "top top",
-                end: "+=1800%",
+                end: "+=1900%",
                 scrub: 1,
                 // markers:true
             },
@@ -123,7 +135,10 @@ function BenTen() {
         },"+=0")
         
 
-//alien1       
+//alien1  
+    .to(logo2.current,{opacity:1,ease: "power2.out",rotate:'405deg' })
+
+
         .fromTo(Ali1.current, {
             scale: 0,
             opacity: 0,
@@ -362,6 +377,8 @@ function BenTen() {
             ease: "power2.in" 
         }, "+=1") 
 
+
+    .to(logo2.current,{opacity:0,rotate:'180deg'})
 //-------------------------------
 
 
@@ -443,97 +460,102 @@ function BenTen() {
 {/* Aliens------------ */}
 
 
-                <div ref={Ali1}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-orange-600 font-bold  '>
+                <div ref={Ali1}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-orange-600 font-bold  '>
                     <div>
-                        <img src="./B10/Wildmutt.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(251 146 60))'}} />
+                        <img src="./B10/Wildmutt.png" alt="Wildmutt" style={{filter: 'drop-shadow(15px 5px 30px rgb(251 146 60))'}} />
                     </div>
                     <div className='font-mono'>
-                        HWildmutt
+                        Wildmutt
                     </div>
                 </div>
 
-                <div ref={Ali2}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-red-600 font-bold  '>
+                <div ref={Ali2}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-red-600 font-bold  '>
                     <div>
-                        <img src="./B10/Four_Arms.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(248 113 113))'}} />
+                        <img src="./B10/Four_Arms.png" alt="Four_Arms" style={{filter: 'drop-shadow(15px 5px 30px rgb(248 113 113))'}} />
                     </div>
-                    <div className='font-mono text-2xl'>
+                    {/* <div className='font-mono text-2xl'>
                     Four Arms
-                    </div>
+                    </div> */}
                 </div>
 
-                <div ref={Ali3}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-gray-500 font-bold  '>
+                <div ref={Ali3}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-gray-500 font-bold  '>
                     <div>
-                        <img src="./B10/Grey_Matter.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(156 163 175))'}} />
+                        <img src="./B10/Grey_Matter.png" alt="Grey_Matter" style={{filter: 'drop-shadow(15px 5px 30px rgb(156 163 175))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                     Grey Matter
-                    </div>
+                    </div> */}
                 </div>
 
-                <div ref={Ali4}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-cyan-500 font-bold  '>
+                <div ref={Ali4}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-cyan-500 font-bold  '>
                     <div>
-                        <img src="./B10/xlr8.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(6 182 212))'}} />
+                        <img src="./B10/xlr8.png" alt="XLR8" style={{filter: 'drop-shadow(15px 5px 30px rgb(6 182 212))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                     XLR8
-                    </div>
+                    </div> */}
                 </div>
 
-                <div ref={Ali5}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-green-500 font-bold  '>
+                <div ref={Ali5}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-green-500 font-bold  '>
                     <div>
-                        <img src="./B10/upgrade.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(21 128 61))'}} />
+                        <img src="./B10/upgrade.png" alt="Upgrade" style={{filter: 'drop-shadow(15px 5px 30px rgb(21 128 61))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                     Upgrade
-                    </div>
+                    </div> */}
                 </div>
 
-                <div ref={Ali6}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-emerald-400 font-bold  '>
+                <div ref={Ali6}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-emerald-400 font-bold  '>
                     <div>
-                        <img src="./B10/Diamondhead.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(52 211 153))'}} />
+                        <img src="./B10/Diamondhead.png" alt="Diamondhead" style={{filter: 'drop-shadow(15px 5px 30px rgb(52 211 153))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                     Diamondhead
-                    </div>
+                    </div> */}
                 </div>
 
-                <div ref={Ali7}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-green-600 font-bold  '>
+                <div ref={Ali7}  className='absolute z-10  flex-col opacity-0 flex w-full h-screen  items-center justify-center text-green-600 font-bold  '>
                     <div>
-                        <img src="./B10/Ripjaws.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(187 247 208))'}} />
+                        <img src="./B10/Ripjaws.png" alt="Ripjaws" style={{filter: 'drop-shadow(15px 5px 30px rgb(187 247 208))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                     Ripjaws
-                    </div>
+                    </div> */}
                 </div>
 
-                <div ref={Ali8}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-lime-500 font-bold  '>
+                <div ref={Ali8}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-lime-500 font-bold  '>
                     <div>
-                        <img src="./B10/Stinkfly.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(217 249 157))'}} />
+                        <img src="./B10/Stinkfly.png" alt="Stinkfly" style={{filter: 'drop-shadow(15px 5px 30px rgb(217 249 157))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                     Stinkfly
-                    </div>
+                    </div> */}
                 </div>
 
-                <div ref={Ali9}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-zinc-500 font-bold  '>
+                <div ref={Ali9}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-zinc-500 font-bold  '>
                     <div>
-                        <img src="./B10/Ghostfreak.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(161 161 170))'}} />
+                        <img src="./B10/Ghostfreak.png" alt="Ghostfreak" style={{filter: 'drop-shadow(15px 5px 30px rgb(161 161 170))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                     Ghostfreak
-                    </div>
+                    </div> */}
                 </div>
 
-                <div ref={Ali10}  className='absolute flex-col opacity-0 flex w-full h-screen  items-center justify-center text-orange-400 font-bold  '>
+                <div ref={Ali10}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-orange-400 font-bold  '>
                     <div>
-                        <img src="./B10/Heatblast.png" alt="" style={{filter: 'drop-shadow(15px 5px 30px rgb(251 146 60))'}} />
+                        <img src="./B10/Heatblast.png" alt="Heatblast" style={{filter: 'drop-shadow(15px 5px 30px rgb(251 146 60))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                     Heat blast
-                    </div>
+                    </div> */}
                 </div>
 
-                
+                <div ref={logo2} className='bg-green-400 opacity-0 w-[70vh] h-[70vh] rounded-full border-8 border-white'>
+                    <div className='w-full z-0 flex overflow-hidden bg-transparent h-full rounded-full border-[20px] border-zinc-900'>
+<div className='relative rounded-md top-[55%] w-1/2 h-full right-4  bg-black '/>
+<div className='relative rounded-md -top-[52%] w-1/2 h-full left-4  bg-black '/>
+                    </div>
+                </div>
 
 {/* ------------------- */}
 
