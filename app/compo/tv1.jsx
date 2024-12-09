@@ -453,7 +453,7 @@ function BenTen() {
 
 
                 <div ref={aliText}  className='absolute hidden w-full h-screen  items-center justify-center text-zinc-100 font-bold text-[20px] '>
-                    Here is Aliens
+                    Aliens
                 </div>
 
 
@@ -464,9 +464,9 @@ function BenTen() {
                     <div>
                         <img src="./B10/Wildmutt.png" alt="Wildmutt" style={{filter: 'drop-shadow(15px 5px 30px rgb(251 146 60))'}} />
                     </div>
-                    <div className='font-mono'>
+                    {/* <div className='font-mono'>
                         Wildmutt
-                    </div>
+                    </div> */}
                 </div>
 
                 <div ref={Ali2}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-red-600 font-bold  '>
@@ -498,7 +498,7 @@ function BenTen() {
 
                 <div ref={Ali5}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-green-500 font-bold  '>
                     <div>
-                        <img src="./B10/upgrade.png" alt="Upgrade" style={{filter: 'drop-shadow(15px 5px 30px rgb(21 128 61))'}} />
+                        <img src="./B10/Up.png" alt="Upgrade" style={{filter: 'drop-shadow(15px 5px 30px rgb(21 128 61))'}} />
                     </div>
                     {/* <div className='font-mono'>
                     Upgrade
@@ -550,10 +550,10 @@ function BenTen() {
                     </div> */}
                 </div>
 
-                <div ref={logo2} className='bg-green-400 opacity-0 w-[70vh] h-[70vh] rounded-full border-8 border-white'>
+                <div ref={logo2} className='bg-green-400 opacity-0 w-[25rem] h-[25rem] rounded-full border-8 border-white'>
                     <div className='w-full z-0 flex overflow-hidden bg-transparent h-full rounded-full border-[20px] border-zinc-900'>
-<div className='relative rounded-md top-[55%] w-1/2 h-full right-4  bg-black '/>
-<div className='relative rounded-md -top-[52%] w-1/2 h-full left-4  bg-black '/>
+                        <div className='relative rounded-md top-[55%] w-1/2 h-full right-4  bg-black '/>
+                        <div className='relative rounded-md -top-[52%] w-1/2 h-full left-4  bg-black '/>
                     </div>
                 </div>
 
