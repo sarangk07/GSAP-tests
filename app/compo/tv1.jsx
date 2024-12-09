@@ -61,7 +61,7 @@ function BenTen() {
                 trigger: triggerRef.current,
                 pin: true,
                 start: "top top",
-                end: "+=1900%",
+                end: "+=2800%",
                 scrub: 1,
                 // markers:true
             },
@@ -114,6 +114,7 @@ function BenTen() {
         .to(textCon2.current,{
             backgroundColor:'green',
             opacity:1,
+            
             paddingLeft:'20px',
             paddingRight:'20px',
             ease:'power4.in',
@@ -415,11 +416,12 @@ function BenTen() {
 
 
                 <div ref={logo} className='bg-green-500  backdrop-blur-lg rotate-45 overflow-hidden w-72 h-72 rounded-full flex border-8  border-green-900' >
-                    <div className='logoBlack relative border-[6px] border-green-400 top-[53%] w-1/2 h-full right-2  bg-black '/>
-                    <div className='logoBlack relative border-[6px] border-green-400 w-1/2 bottom-[53%] left-2 h-full bg-black'/>
+                    <div className='logoBlack rounded-sm relative border-[6px] border-green-400 top-[53%] w-1/2 h-full right-2  bg-black '/>
+                    <div className='logoBlack rounded-sm relative border-[6px] border-green-400 w-1/2 bottom-[53%] left-2 h-full bg-black'/>
                 
                     
                 </div>
+
             </div>
 
             <div 
@@ -541,9 +543,9 @@ function BenTen() {
                     </div> */}
                 </div>
 
-                <div ref={Ali10}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-orange-400 font-bold  '>
+                <div ref={Ali10}  className='absolute z-10 flex-col opacity-0 flex w-full h-screen  items-center justify-center text-orange-500 font-bold  '>
                     <div>
-                        <img src="./B10/Heatblast.png" alt="Heatblast" style={{filter: 'drop-shadow(15px 5px 30px rgb(251 146 60))'}} />
+                        <img src="./B10/Heatblast.png" alt="Heatblast" style={{filter: 'drop-shadow(15px 5px 30px rgb(249 115 22))'}} />
                     </div>
                     {/* <div className='font-mono'>
                     Heat blast
@@ -553,7 +555,7 @@ function BenTen() {
                 <div ref={logo2} className='bg-green-400 opacity-0 w-[25rem] h-[25rem] rounded-full border-8 border-white'>
                     <div className='w-full z-0 flex overflow-hidden bg-transparent h-full rounded-full border-[20px] border-zinc-900'>
                         <div className='relative rounded-md top-[55%] w-1/2 h-full right-4  bg-black '/>
-                        <div className='relative rounded-md -top-[52%] w-1/2 h-full left-4  bg-black '/>
+                        <div className='relative rounded-md -top-[55%] w-1/2 h-full left-4  bg-black '/>
                     </div>
                 </div>
 
