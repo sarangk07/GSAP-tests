@@ -415,11 +415,12 @@ function BenTen() {
 {/* ----- */}
 
 
-                <div ref={logo} className='bg-green-500  backdrop-blur-lg rotate-45 overflow-hidden w-72 h-72 rounded-full flex border-8  border-green-900' >
-                    <div className='logoBlack rounded-sm relative border-[6px] border-green-400 top-[53%] w-1/2 h-full right-2  bg-black '/>
-                    <div className='logoBlack rounded-sm relative border-[6px] border-green-400 w-1/2 bottom-[53%] left-2 h-full bg-black'/>
+                <div ref={logo} className='bg-green-500  backdrop-blur-lg rotate-45 overflow-hidden w-72 h-72 rounded-full flex border-8  border-green-100' >
+                    <div className='w-full z-0 flex overflow-hidden bg-transparent h-full rounded-full border-[13px] border-zinc-950'>
+                        <div className='logoBlack rounded-sm relative border-[5px] border-green-400 top-[53%] w-1/2 h-full right-2  bg-black '/>
+                        <div className='logoBlack rounded-sm relative border-[5px] border-green-400 w-1/2 bottom-[53%] left-2 h-full bg-black'/>
                 
-                    
+                    </div>
                 </div>
 
             </div>
