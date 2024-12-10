@@ -61,7 +61,7 @@ function BenTen() {
                 trigger: triggerRef.current,
                 pin: true,
                 start: "top top",
-                end: "+=2800%",
+                end: "+=2900%",
                 scrub: 1,
                 // markers:true
             },
@@ -416,7 +416,7 @@ function BenTen() {
 
 
                 <div ref={logo} className='bg-green-500  backdrop-blur-lg rotate-45 overflow-hidden w-72 h-72 rounded-full flex border-8  border-green-100' >
-                    <div className='w-full z-0 flex overflow-hidden bg-transparent h-full rounded-full border-[13px] border-zinc-950'>
+                    <div className='w-full z-0 flex overflow-hidden bg-transparent h-full rounded-full border-[10px] border-stone-900'>
                         <div className='logoBlack rounded-sm relative border-[5px] border-green-400 top-[53%] w-1/2 h-full right-2  bg-black '/>
                         <div className='logoBlack rounded-sm relative border-[5px] border-green-400 w-1/2 bottom-[53%] left-2 h-full bg-black'/>
                 
@@ -562,15 +562,11 @@ function BenTen() {
 
 {/* ------------------- */}
 
-
-
                 <div ref={intro1}
                 className='absolute w-full h-screen justify-center text-black items-center flex opacity-0 text-12px'>
                     Still  work in progres , See you Later....
                 </div> 
-
-
-                
+               
             </div>
         </div>
     )
