@@ -61,8 +61,9 @@ function BenTen() {
                 trigger: triggerRef.current,
                 pin: true,
                 start: "top top",
-                end: "+=2900%",
+                end: "+=3000%",
                 scrub: 1,
+                ease:'power2.inOut'
                 // markers:true
             },
             defaults: { 
@@ -78,6 +79,7 @@ function BenTen() {
         .to(logo.current,{
             scale: 15,
             rotate:'10rad',
+            duration:4,
             opacity: 0,
             
         }, "start")
@@ -87,34 +89,34 @@ function BenTen() {
         .to(divRefs.current,{
             opacity:1,
             backgroundColor:'green',
-            
-        })
+            duration:2,
+        },"-=1")
         .to(divRefs.current,{
             opacity:0,
+            duration:3,
             scale:5,
-            
-            
         },"<")
 
 
 //BEN 10 text animation
         .to(textCon1.current, {
-            scale: 7,
+            scale: 6,
             opacity: 1,
+            duration:3,
             
-        }, "-=1")
+        }, "<")
         .to(textCon1.current, {
             y:-1500,
-            duration: 1.5,
+            duration:3,
             ease:'power3.inOut'
-        },1)
+        },"+=3")
 
 
 //ben10 [details] component/div animtaion
         .to(textCon2.current,{
             backgroundColor:'green',
             opacity:1,
-            
+            duration:2,
             paddingLeft:'20px',
             paddingRight:'20px',
             ease:'power4.in',
@@ -122,9 +124,10 @@ function BenTen() {
         }, "-=0.3")
         .to(textCon2.current,{
             scale:17,
+            duration:5,
             opacity:0,
             ease:'power4.inOut',
-        },"+=1")
+        },"+=4")
 
 
 //alien intro text
@@ -137,7 +140,7 @@ function BenTen() {
         
 
 //alien1  
-    .to(logo2.current,{opacity:1,ease: "power2.out",rotate:'405deg' })
+    .to(logo2.current,{opacity:1,ease: "power2.out",rotate:'405deg',duration:4 })
 
 
         .fromTo(Ali1.current, {
@@ -379,7 +382,7 @@ function BenTen() {
         }, "+=1") 
 
 
-    .to(logo2.current,{opacity:0,rotate:'180deg'})
+    .to(logo2.current,{opacity:0,rotate:'180deg',duration:5})
 //-------------------------------
 
 
@@ -431,7 +434,7 @@ function BenTen() {
             >
                 <div 
                     ref={textCon1} 
-                    className="absolute w-full  h-screen  font-sans flex items-center justify-center text-green-600 font-bold  text-[20px] opacity-0"  
+                    className="absolute w-full z-30  h-screen  font-sans flex items-center justify-center text-green-600 font-bold  text-[20px] opacity-0"  
                 >
                     BEN <span className='text-zinc-200 ml-1 '>10</span>                
                 </div>
