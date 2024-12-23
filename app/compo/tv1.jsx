@@ -79,7 +79,7 @@ function BenTen() {
         .to(logo.current,{
             scale: 15,
             rotate:'10rad',
-            duration:4,
+            duration:2,
             opacity: 0,
             
         }, "start")
