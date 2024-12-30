@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        robotaur: ['"Robotaur 3D"', 'sans-serif'],
+      },
     },
   },
   plugins: [],
