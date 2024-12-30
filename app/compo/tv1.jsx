@@ -81,6 +81,7 @@ function BenTen() {
             rotate:'10rad',
             duration:2,
             opacity: 0,
+            ease:'power3.inOut'
             
         }, "start")
 
