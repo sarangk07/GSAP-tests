@@ -8,9 +8,11 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 function Kaiju() {
     const se1imgRef = useRef(null);
     const se2imgRef = useRef(null);
+    const se1imgDivRef = useRef(null);
+    const se2imgDivRef = useRef(null);
     const triggerRef = useRef(null);
-    const page1Ref = useRef(null);
-    const page2Ref = useRef(null);
+    const letterDivRef = useRef(null);
+    const discriptionRef = useRef(null);
     const se1letterRefs = useRef([]);
     
     const addToRefs = (el) => {
@@ -58,11 +60,6 @@ function Kaiju() {
                 ease: "none" 
             }
         })
-        tl.to(page1Ref.current,{
-            opacity:100,
-            duration:2
-
-        },'start')
         .from(se1letterRefs.current, {
             y: -1500,
             opacity: 0,
@@ -70,14 +67,34 @@ function Kaiju() {
             stagger: 0.2,
             ease: 'power3.out'
         },"start")
-        .to(page1Ref.current,{
+        .to(se1imgDivRef.current,{
             x:-1000,
-            opacity:0
+            opacity:0,
+            display:'none'
         },"+=1")
-        .to(page2Ref.current,{
+        .to(se1letterRefs.current,{
+            y: -1500,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            display:'none',
+            ease: 'power3.out'
+        },"+=0")
+        .to(letterDivRef.current,{
+            display:'none',ease: 'power3.out'
+        },"-=1")
+        .fromTo(se2imgDivRef.current,{
+            x:-1500,
+        },{
+            x:0,
             opacity:100,
-
-        },">")
+            display:'flex',
+        })
+        .to(discriptionRef.current,{
+            opacity:100,
+            display:"flex",
+        })
+        
 
 
 
@@ -90,12 +107,12 @@ function Kaiju() {
      
 
   return (
-    <div ref={triggerRef}>
+    <div ref={triggerRef} className='bg-gradient-to-br relative from-blue-700 to-black flex flex-row w-full h-screen'>
 
 
-    {/* page1 */}
-        <div ref={page1Ref} className='1st opacity-0 absolute  flex justify-center items-center w-full h-screen bg-gradient-to-br from-blue-700 to-black'>
-            <div className='flex flex-col font-robotaur md:flex-row justify-left text-6xl items-center pl-2 '>
+    {/* page1 contents*/}
+        
+            <div ref={letterDivRef} className='flex w-1/2 flex-col justify-center font-robotaur md:flex-row justify-left text-6xl items-center pl-2 '>
                 {letters.map((letter, index) => (
                     <p
                         key={index}
@@ -110,7 +127,7 @@ function Kaiju() {
                 ))}
             </div>
             
-            <div className='relative h-full w-full flex items-end justify-end'>
+            <div ref={se1imgDivRef} className='relative h-full w-1/2  flex items-end justify-center'>
                 <img 
                     ref={se1imgRef}
                     src="./Kaiju/Kaijupg1img1.png" 
@@ -119,25 +136,24 @@ function Kaiju() {
                     style={{filter: 'drop-shadow(8px 6px 2px rgb(37 99 235))'}}
                 />
             </div>
-        </div>
+        
 
 
 
 
-    {/* page2 */}
-      <div ref={page2Ref} className='2nd opacity-0 flex absolute  flex-col lg:flex-row-reverse w-full h-screen bg-gradient-to-br from-black to-cyan-600'>
-            <p className='flex text-wrap font-mono z-10 backdrop-blur-sm lg:backdrop-blur-0 lg:backdrop-brightness-100 backdrop-brightness-50 text-lg  h-screen lg:w-3/5 lg:h-full items-center justify-center p-5'>"Kaiju No. 8" is a dynamic manga series created by Naoya Matsumoto, set in a world where colossal monsters known as kaiju frequently threaten humanity. The narrative centers on Kafka Hibino, a 32-year-old man who aspires to join the Japanese Anti-Kaiju Defense Force (JAKDF), an elite group tasked with combating these monstrous threats.</p>
-            <div className='h-full absolute lg:relative lg:w-3/5 lg:h-full flex items-end justify-end'>
+    {/* page2  contents*/}
+            <p ref={discriptionRef} className='opacity-0 hidden w-full  absolute  text-wrap font-mono z-10 backdrop-blur-sm lg:backdrop-blur-0  backdrop-brightness-50 text-lg  h-screen  lg:h-full items-center justify-center p-5'>"Kaiju No. 8" is a dynamic manga series created by Naoya Matsumoto, set in a world where colossal monsters known as kaiju frequently threaten humanity. The narrative centers on Kafka Hibino, a 32-year-old man who aspires to join the Japanese Anti-Kaiju Defense Force (JAKDF), an elite group tasked with combating these monstrous threats.</p>
+            <div ref={se2imgDivRef} className='opacity-0 hidden w-full h-full  absolute lg:relative  lg:h-full items-end justify-center'>
                 <img 
                     ref={se2imgRef}
                     src="./Kaiju/K2.png" 
                     alt="Kaiju" 
-                    className='w-auto h-[90%] lg:h-[90%] object-contain' 
+                    className='w-auto  h-[90%] lg:h-[90%] object-contain' 
                     style={{filter: 'drop-shadow(15px 10px 2px rgb(255 255 255))'}}
                 />
                
             </div>
-      </div>
+      
 
 
 
