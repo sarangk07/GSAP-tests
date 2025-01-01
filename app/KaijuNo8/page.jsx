@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRef } from 'react';
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 function Kaiju() {
+    const introTextRef = useRef(null);
     const se1imgRef = useRef(null);
     const se2imgRef = useRef(null);
     const se1imgDivRef = useRef(null);
@@ -14,6 +15,8 @@ function Kaiju() {
     const letterDivRef = useRef(null);
     const discriptionRef = useRef(null);
     const se1letterRefs = useRef([]);
+
+
     
     const addToRefs = (el) => {
         if (el && !se1letterRefs.current.includes(el)) {
@@ -22,8 +25,9 @@ function Kaiju() {
     };
 
     useEffect(()=>{
+       
         gsap.registerPlugin(ScrollTrigger);
-
+        
         gsap.to(se1imgRef.current,{
             filter:'drop-shadow(7px 6px 2px rgb(103 232 249))',
             repeat:-1,
@@ -51,7 +55,7 @@ function Kaiju() {
                 trigger: triggerRef.current,
                 pin: true,
                 start: "top top",
-                end: "+=2800%",
+                end: "+=1800%",
                 scrub: 1,
                 ease:'power2.inOut'
                 // markers:true
@@ -60,26 +64,36 @@ function Kaiju() {
                 ease: "none" 
             }
         })
+        .to(introTextRef.current,{
+            scale:100,
+            duration:2,
+            opacity:0
+        },"start")
         .from(se1letterRefs.current, {
             y: -1500,
             opacity: 0,
-            duration: 1,
+            
             stagger: 0.2,
             ease: 'power3.out'
-        },"start")
+        },">")
+        .from(se1imgDivRef.current,{
+            scale:0.1,
+            opacity: 0,
+            ease: 'power3.out'
+        },"<")
         .to(se1imgDivRef.current,{
-            x:-1000,
+            scale:10,
             opacity:0,
             display:'none'
         },"+=1")
         .to(se1letterRefs.current,{
-            y: -1500,
+            y: 1500,
             opacity: 0,
             duration: 1,
             stagger: 0.2,
             display:'none',
-            ease: 'power3.out'
-        },"+=0")
+            ease: 'power3.in'
+        },"-=1")
         .to(letterDivRef.current,{
             display:'none',ease: 'power3.out'
         },"-=1")
@@ -104,12 +118,14 @@ function Kaiju() {
 
     const letters = ['K', 'I', 'J', 'U', '.', 'No', '8'];
     // const jpletters = ['怪', '獣', '8', '号'];
-     
+
+
 
   return (
-    <div ref={triggerRef} className='bg-gradient-to-br relative from-blue-700 to-black flex flex-row w-full h-screen'>
+    <div ref={triggerRef} className='bg-gradient-to-br  relative from-blue-700 to-black flex flex-row w-full h-screen'>
 
-
+    {/* intro */}
+    <h2 ref={introTextRef} className='absolute w-full h-screen font-godzillasofuro text-4xl flex justify-center items-center'>Kaiju No 8</h2>
     {/* page1 contents*/}
         
             <div ref={letterDivRef} className='flex w-1/2 flex-col justify-center font-robotaur md:flex-row justify-left text-6xl items-center pl-2 '>
@@ -127,12 +143,12 @@ function Kaiju() {
                 ))}
             </div>
             
-            <div ref={se1imgDivRef} className='relative h-full w-1/2  flex items-end justify-center'>
+            <div ref={se1imgDivRef} className='relative  h-full w-1/2  flex items-end justify-center'>
                 <img 
                     ref={se1imgRef}
-                    src="./Kaiju/Kaijupg1img1.png" 
+                    src="./Kaiju/Kaijupg1img2.png" 
                     alt="Kaiju" 
-                    className='w-auto h-[90%] object-contain' 
+                    className='w-auto h-[98%] object-contain' 
                     style={{filter: 'drop-shadow(8px 6px 2px rgb(37 99 235))'}}
                 />
             </div>
@@ -146,7 +162,7 @@ function Kaiju() {
             <div ref={se2imgDivRef} className='opacity-0 hidden w-full h-full  absolute lg:relative  lg:h-full items-end justify-center'>
                 <img 
                     ref={se2imgRef}
-                    src="./Kaiju/K2.png" 
+                    src="./Kaiju/K1.png" 
                     alt="Kaiju" 
                     className='w-auto  h-[90%] lg:h-[90%] object-contain' 
                     style={{filter: 'drop-shadow(15px 10px 2px rgb(255 255 255))'}}

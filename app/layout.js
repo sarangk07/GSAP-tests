@@ -11,6 +11,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const godzillasOfuro = localFont({
+  src: './fonts/godzillasofuro.ttf',
+  variable: '--font-godzillas-ofuro',
+  display: 'swap',
+})
 
 export const metadata = {
   title: "GSAP",
@@ -21,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${godzillasOfuro.variable} antialiased`}
       >
         {children}
       </body>

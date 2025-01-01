@@ -1,9 +1,16 @@
 @font-face {
-  font-family: 'Robotaur 3D'; 
+  font-family: 'Robotaur 3D';
   src: url('./fonts/robotaur3d.ttf') format('truetype'),
-       url('./fonts/robotaur3dital.ttf') format('truetype'); 
+       url('./fonts/robotaur3dital.ttf') format('truetype');
   font-weight: 400;
-  font-style: normal; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GodzillaOfuro";
+  src: url('./fonts/godzillasofuro.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 
