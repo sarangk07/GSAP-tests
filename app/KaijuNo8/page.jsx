@@ -141,8 +141,8 @@ function Kaiju() {
         .to(flipContainerref.current, {
             opacity: 100,
             display: 'block',
-            duration: 2,
-            onComplete: () => {
+            duration: 1,
+            onStart: () => {
                 gsap.from(flipContainerref.current.children[0].children, {
                     scale: 0,
                     opacity: 0,
@@ -159,9 +159,7 @@ function Kaiju() {
 
 
 
-
-
-
+        
     },[]) 
 
     const letters = ['K', 'I', 'J', 'U', '.', 'No', '8'];
@@ -204,18 +202,18 @@ function Kaiju() {
 
     {/* page2  contents*/}
             <p ref={discriptionRef} className='opacity-0 hidden w-full  absolute  text-wrap font-mono z-10 backdrop-blur-sm lg:backdrop-blur-0  backdrop-brightness-50 text-lg  h-screen  lg:h-full items-center justify-center p-5'>"Kaiju No. 8" is a dynamic manga series created by Naoya Matsumoto, set in a world where colossal monsters known as kaiju frequently threaten humanity. The narrative centers on Kafka Hibino, a 32-year-old man who aspires to join the Japanese Anti-Kaiju Defense Force (JAKDF), an elite group tasked with combating these monstrous threats.</p>
-            <div ref={se2imgDivRef} className='opacity-0 hidden w-full h-full  relative items-end justify-center'>
+            <div ref={se2imgDivRef} className='opacity-0 hidden w-screen h-full  relative items-end justify-center'>
                 <img 
                     ref={se2imgRef}
                     src="./Kaiju/K1.png" 
                     alt="Kaiju" 
-                    className='w-auto h-[90%] object-contain' 
+                    className='w-screen h-[90%] object-contain' 
                     style={{filter: 'drop-shadow(15px 10px 2px rgb(255 255 255))'}}
                 />
             </div>
       
     {/* page3 for testing flip animation */}
-        <div ref={flipContainerref} className='opacity-0 hidden text-white w-full h-full absolute p-4 scrollbar-hide'>
+        <div ref={flipContainerref} className='opacity-0 hidden text-white w-full h-full absolute p-4 overflow-hidden'>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full min-h-full place-items-center pb-20'>
                 <div className='hover:scale-125  hover:transition-transform bg-blue-800 relative w-full max-w-[8rem] md:max-w-[12rem] lg:max-w-[14rem] aspect-square'>
                     <img src="https://i.pinimg.com/736x/ef/cb/93/efcb9355e5d6b3790ff5cbab2bc9c757.jpg" alt="Kafka Hibino" className='w-full h-full object-cover' />
