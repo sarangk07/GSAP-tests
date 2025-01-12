@@ -17,6 +17,10 @@ const godzillasOfuro = localFont({
   display: 'swap',
 })
 
+const dualityRegular = localFont({
+  src: './fonts/duality.ttf',
+});
+
 export const metadata = {
   title: "GSAP",
   description: "GSAP animations",

@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         robotaur: ['"Robotaur 3D"', 'sans-serif'],
         godzillasofuro: ['GodzillaOfuro', 'sans-serif'],
+        dualityregular: ['Duality-Regular', 'sans-serif']
       },
     },
   },
