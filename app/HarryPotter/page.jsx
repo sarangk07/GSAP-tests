@@ -1,11 +1,24 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 function TheDailyProphet() {
     const page1ref = useRef(null)
     const page2ref = useRef(null)
     const page3ref = useRef(null)
+
+    const defetedTextRef = useRef(null)
+
+    useEffect(()=>{
+        gsap.to(defetedTextRef.current,{
+            backgroundColor:'black',
+            repeat:-1,
+            duration:1,
+            yoyo:true,
+            ease:'elastic.in'
+        })
+    })
 
 
 
@@ -19,6 +32,7 @@ function TheDailyProphet() {
         <div className='h-1/6 bg-zinc-200 flex flex-col justify-center items-center'>
             <h4 className='h-1/4 flex items-center text-xs font-dualityregular'>the</h4>
             <h1 className='h-3/4 text-3xl lg:text-6xl font-serif font-extrabold m-0 p-0'>DAILY <span className='text-yellow-500'>P</span>ROPHET</h1>
+            <p className='text-[8px] lg:text-xs'>★ THE WIZARD WORLD'S BEGUILNG BROADSHEET OF CHOICE ★</p>
         </div>
 
         <div className='h-5/6 '>
@@ -32,14 +46,14 @@ function TheDailyProphet() {
                     <p>London - cloudy & rain 14C</p>
                 </div>
                 <div className='text-[8px] font-dualityregular lg:text-base  py-2'>
-                    <h3>Zodiac * Aspects</h3>
+                    <h3>Zodiac ★ Aspects</h3>
                     <p>ta- virgo luna opp-</p>
                     <p>in- aries - com t</p>
-                    <p>s sizio ne pi * sees</p>
+                    <p>s sizio ne pi ★ sees</p>
                 </div>
                 <div className='text-[8px] lg:text-base rounded-sm bg-zinc-600 text-zinc-100 px-2  py-2'>
                     <h2>FIRST-SECOND EDITION</h2>
-                    <p>D 978999-London - UK</p>
+                    <p>D* 978999-London - UK</p>
                     <p>TODAY in Scorpio</p>
                     <p></p>
                 </div>
@@ -63,7 +77,7 @@ function TheDailyProphet() {
             </div>
             <div className='flex  flex-col lg:flex-row items-center justify-center h-5/6 bg-zinc-200 border border-zinc-900'>
                 <div className='font-serif text-7xl  lg:text-[9rem] first-letter:flex flex-col justify-start items-start  px-3'>
-                    THE DARK LORD <span className='text-7xl bg-zinc-800 text-zinc-200'>DEFEATED</span>
+                    THE DARK LORD <span ref={defetedTextRef} className='text-7xl bg-zinc-800 text-zinc-200 '>DEFEATED</span>
                 </div>
                 <div className='px-3  py-2 relative'>
                     <div className='items-center'>

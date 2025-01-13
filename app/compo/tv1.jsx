@@ -122,7 +122,7 @@ function BenTen() {
             paddingRight:'20px',
             ease:'power4.in',
             scale:4,
-        }, "-=0.3")
+        }, "<40%")
         .to(textCon2.current,{
             scale:17,
             duration:5,
@@ -178,7 +178,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5,
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali2.current, {
             scale: 0.7,
             x: 40,
@@ -202,7 +202,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5, 
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali3.current, {
             scale: 0.7,
             x: -40,
@@ -225,7 +225,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5, 
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali4.current, {
             scale: 0.7,
             x: 40,
@@ -249,7 +249,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5, 
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali5.current, {
             scale: 0.7,
             x: -40,
@@ -273,7 +273,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5, 
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali6.current, {
             scale: 0.7,
             x: 40,
@@ -297,7 +297,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5, 
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali7.current, {
             scale: 0.7,
             x: -40,
@@ -321,7 +321,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5, 
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali8.current, {
             scale: 0.7,
             x: 40,
@@ -345,7 +345,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5, 
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali9.current, {
             scale: 0.7,
             x: -40,
@@ -369,7 +369,7 @@ function BenTen() {
             opacity: 1,
             duration: 1.5, 
             ease: "power2.out" 
-        })
+        },'<70%')
         .fromTo(Ali10.current, {
             scale: 0.7,
             x: 40,
