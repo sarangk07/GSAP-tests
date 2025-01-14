@@ -2,15 +2,23 @@
 
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import Observer from 'gsap/Observer'
 
 function TheDailyProphet() {
     const page1ref = useRef(null)
+    const pLetterReff = useRef(null)
+    const firstImgReff = useRef(null)
+    const newS1ref = useRef(null)
+
     const page2ref = useRef(null)
     const page3ref = useRef(null)
 
     const defetedTextRef = useRef(null)
 
     useEffect(()=>{
+
+        gsap.registerPlugin(Observer)
+
         gsap.to(defetedTextRef.current,{
             backgroundColor:'black',
             repeat:-1,
@@ -18,7 +26,38 @@ function TheDailyProphet() {
             yoyo:true,
             ease:'elastic.in'
         })
-    })
+
+        const observerN1 = Observer.create({
+            target:newS1ref.current,
+            type:"wheel,touch,pointer",
+
+            onChange: (self) => {
+                console.log("Velocity X:", self.velocityX);
+                console.log("Delta Y:", self.deltaY);
+            },
+            onHover:()=>{
+                gsap.to(newS1ref.current,{
+                    backgroundColor:'#d4d4d8',
+                    scaleY:1.1
+                })
+            },
+            onHoverEnd:()=>{
+                gsap.to(newS1ref.current,{
+                     backgroundColor:'#a1a1aa',
+                     scaleY:1
+                })
+            },
+            // onDown:()=>{
+            //     gsap.to(firstImgReff.current,{
+            //         scale:1.5
+            //     })
+            // }
+        })
+
+        return () => {
+            observerN1.kill();
+        };
+    },[])
 
 
 
@@ -28,10 +67,10 @@ function TheDailyProphet() {
     <>
 
 {/* page1 */}
-    <div className='w-full p-1 font-dualityregular text-zinc-800 bg-zinc-300 absolute'>
+    <div className='w-full cursor-default p-1 font-dualityregular text-zinc-800 bg-zinc-300 absolute overflow-x-hidden'>
         <div className='h-1/6 bg-zinc-200 flex flex-col justify-center items-center'>
             <h4 className='h-1/4 flex items-center text-xs font-dualityregular'>the</h4>
-            <h1 className='h-3/4 text-3xl lg:text-6xl font-serif font-extrabold m-0 p-0'>DAILY <span className='text-yellow-500'>P</span>ROPHET</h1>
+            <h1 className='h-3/4 text-3xl lg:text-6xl font-serif font-extrabold m-0 p-0'>DAILY <span ref={pLetterReff} className='text-yellow-500'>P</span>ROPHET</h1>
             <p className='text-[8px] lg:text-xs'>★ THE WIZARD WORLD'S BEGUILNG BROADSHEET OF CHOICE ★</p>
         </div>
 
@@ -81,13 +120,13 @@ function TheDailyProphet() {
                 </div>
                 <div className='px-3  py-2 relative'>
                     <div className='items-center'>
-                        <img className='px-3 w-52 h-48 lg:w-80 lg:h-64 float-left' src="./HarryPotter/H0Lz.gif" alt="" />
+                        <img ref={firstImgReff} className='px-3 w-52 h-48 lg:w-80 lg:h-64 float-left' src="./HarryPotter/H0Lz.gif" alt="" />
                         <p className='text-wrap lg:text-2xl px-3'>
                             <span className='font-bold text-4xl'>I</span>n a historic turn of events, the wizarding world rejoices as the notorious Dark Lord has been vanquished once and for all. This monumental victory comes after a fierce battle at Hogwarts School of Witchcraft and Wizardry, where brave witches and wizards united to confront the greatest threat to the magical community.   As we reflect on this victory, we remember those who sacrificed their lives for peace and justice.
                             The defeat of the Dark Lord marks a new dawn for wizards and witches everywhere. Celebrations are erupting across the globe, with magical communities hosting feasts, fireworks, and jubilant gatherings. The Ministry of Magic has declared a national holiday to honor the fallen heroes who fought valiantly in the battle.
                         </p>
                     </div>
-                    <div className='bg-zinc-400 '>
+                    <div ref={newS1ref} className='bg-zinc-400 '>
                         <div className='flex lg:text-1xl px-3 border-l border-b border-zinc-400'>
                             
                             <div className='text-xl font-bold float-start'>
