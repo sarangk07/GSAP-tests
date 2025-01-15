@@ -31,27 +31,23 @@ function TheDailyProphet() {
             target:newS1ref.current,
             type:"wheel,touch,pointer",
 
-            onChange: (self) => {
-                console.log("Velocity X:", self.velocityX);
-                console.log("Delta Y:", self.deltaY);
-            },
             onHover:()=>{
                 gsap.to(newS1ref.current,{
                     backgroundColor:'#d4d4d8',
-                    scaleY:1.1
+                    scaleY:1.1,
+                    marginTop:'15px',
+                    marginBottom:'15px',
                 })
             },
             onHoverEnd:()=>{
                 gsap.to(newS1ref.current,{
-                     backgroundColor:'#a1a1aa',
-                     scaleY:1
+                    backgroundColor:'#a1a1aa',
+                    scaleY:1,
+                    marginTop:'0px',
+                    marginBottom:'0px',
                 })
             },
-            // onDown:()=>{
-            //     gsap.to(firstImgReff.current,{
-            //         scale:1.5
-            //     })
-            // }
+
         })
 
         return () => {
@@ -116,7 +112,7 @@ function TheDailyProphet() {
             </div>
             <div className='flex  flex-col lg:flex-row items-center justify-center h-5/6 bg-zinc-200 border border-zinc-900'>
                 <div className='font-serif text-7xl  lg:text-[9rem] first-letter:flex flex-col justify-start items-start  px-3'>
-                    THE DARK LORD <span ref={defetedTextRef} className='text-7xl bg-zinc-800 text-zinc-200 '>DEFEATED</span>
+                    THE DARK LORD <span ref={defetedTextRef} className='text-7xl bg-zinc-600 text-zinc-200 '>DEFEATED</span>
                 </div>
                 <div className='px-3  py-2 relative'>
                     <div className='items-center'>
