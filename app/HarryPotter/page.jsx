@@ -3,12 +3,14 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Observer from 'gsap/Observer'
+import TypedAnimation from '../compo/HP/TypeAnimation'
 
 function TheDailyProphet() {
     const page1ref = useRef(null)
     const pLetterReff = useRef(null)
     const firstImgReff = useRef(null)
     const newS1ref = useRef(null)
+    const danceNewsRef = useRef(null)
 
     const page2ref = useRef(null)
     const page3ref = useRef(null)
@@ -50,8 +52,10 @@ function TheDailyProphet() {
 
         })
 
+
         return () => {
             observerN1.kill();
+            
         };
     },[])
 
@@ -68,6 +72,16 @@ function TheDailyProphet() {
             <h4 className='h-1/4 flex items-center text-xs font-dualityregular'>the</h4>
             <h1 className='h-3/4 text-3xl lg:text-6xl font-serif font-extrabold m-0 p-0'>DAILY <span ref={pLetterReff} className='text-yellow-500'>P</span>ROPHET</h1>
             <p className='text-[8px] lg:text-xs'>★ THE WIZARD WORLD'S BEGUILNG BROADSHEET OF CHOICE ★</p>
+            {/* <TypedAnimation 
+                strings={[
+                    'THE DARK LORD',
+                    'HE WHO MUST NOT BE NAMED',
+                    'YOU-KNOW-WHO'
+                ]}
+                speed={0.1}
+                delay={2}
+                className='text-[8px] lg:text-xs'
+            /> */}
         </div>
 
         <div className='h-5/6 '>
@@ -110,7 +124,7 @@ function TheDailyProphet() {
                     </p>
                 </div>
             </div>
-            <div className='flex  flex-col lg:flex-row items-center justify-center h-5/6 bg-zinc-200 border border-zinc-900'>
+            <div className='flex  flex-col lg:flex-row items-center justify-center h-5/6 bg-zinc-200 border border-zinc-500'>
                 <div className='font-serif text-7xl  lg:text-[9rem] first-letter:flex flex-col justify-start items-start  px-3'>
                     THE DARK LORD <span ref={defetedTextRef} className='text-7xl bg-zinc-600 text-zinc-200 '>DEFEATED</span>
                 </div>
@@ -134,9 +148,20 @@ function TheDailyProphet() {
                             </div>
 
                             <div className='pl-2'>
-                                <p className='text-lg font-bold'>
+                                {/* <p className='text-lg font-bold'>
                                     IS NOTHING TO FEAR
-                                </p>
+                                </p> */}
+
+                                {/* react-typed unable to install becouse of react version issue */}
+                                <TypedAnimation 
+                                    strings={[
+                                        'IS NOTHING TO FEAR'
+                                    ]}
+                                    speed={0.1}
+                                    delay={2}
+                                    className='text-lg font-bold'
+                                />
+                                
                                 <p>As we reflect on this victory, we remember those who sacrificed their lives for peace and justice. The legacy of their bravery will live on in our hearts and history books. Hogwarts will forever stand as a symbol of resilience against darkness, reminding us that even in our darkest hours, hope can prevail.</p>
                             </div>
                             
@@ -145,7 +170,7 @@ function TheDailyProphet() {
                 </div>
                 
             </div>
-            <div className='pb-5 px-3 bg-zinc-300 border border-zinc-600'>
+            <div ref={danceNewsRef} className='pb-5 px-3 bg-zinc-300 border border-zinc-600'>
                 <p className='w-fit font-serif lg:text-2xl text-lg font-extrabold'>MUGGLE-BORN STUDENTS DISCOVER THE ART OF MUGGLE DANCE</p>
                 <img className=' w-32 h-32 md:w-24 md:h-24 float-right grayscale' src="./HarryPotter/8qqx.gif" alt="" />
                 <p className='  w-fit font-light lg:text-xl '><span className='font-bold text-xl'>I</span>n an effort to bridge the gap between magical and non-magical cultures, a group of Muggle-born students at Hogwarts has started a dance club featuring popular Muggle dance styles. From the Electric Slide to the Macarena, students are embracing these new moves with enthusiasm—and a fair bit of clumsiness. Professor Flitwick has even offered extra credit for those who can master the Moonwalk without tripping over their own feet!</p>
