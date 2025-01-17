@@ -155,7 +155,7 @@ function TheDailyProphet() {
                                 {/* react-typed unable to install becouse of react version issue */}
                                 <TypedAnimation 
                                     strings={[
-                                        'IS NOTHING TO FEAR'
+                                    'IS NOTHING TO FEAR'
                                     ]}
                                     speed={0.1}
                                     delay={2}

@@ -45,22 +45,6 @@ function Kaiju() {
             yoyo:true,
             ease:'power3.inOut'
         })
-        // gsap.from(se1letterRefs.current, {
-        //     y: -1000,
-        //     opacity: 0,
-        //     duration: 1,
-        //     stagger: 0.2,
-        //     ease: 'power3.out'
-        // });  
-
-        // gsap.to(flipContainerref.current,{
-        //     flexDirection:'row',
-        //     repeat:-1,
-        //     yoyo:true
-        // })
-
-
-
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -125,7 +109,7 @@ function Kaiju() {
         .to(discriptionRef.current,{
             opacity:100,
             display:"flex",
-        })
+        },"-=1")
         .to(discriptionRef.current,{
             opacity:0,
             duration:1,
@@ -212,7 +196,7 @@ function Kaiju() {
                 />
             </div>
       
-    {/* page3 for testing flip animation */}
+    {/* page3 */}
         <div ref={flipContainerref} className='opacity-0 hidden text-white w-full h-full absolute p-4 overflow-hidden'>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full min-h-full place-items-center pb-20'>
                 <div className='hover:scale-125  hover:transition-transform bg-blue-800 relative w-full max-w-[8rem] md:max-w-[12rem] lg:max-w-[14rem] aspect-square'>
