@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import T1 from './t1';
+
 
 
 function T2() {
@@ -15,12 +15,11 @@ function T2() {
     const text1 = useRef(null);
 
     useEffect(() => {
-        // Create a new timeline
+        
         const tl = gsap.timeline();
 
-        // Sequence of animations
+        
         tl
-            // First, animate the side divs
             .to(div2.current, { 
                 x: '100vw', 
                 border: '2px', 
@@ -28,7 +27,7 @@ function T2() {
                 duration: 5, 
                 display: 'none', 
                 ease: 'power1.in'
-            }, 0) // Start immediately
+            }, 0)
             .to(div1.current, { 
                 x: '-100vw', 
                 border: '2px', 
@@ -36,9 +35,9 @@ function T2() {
                 duration: 5, 
                 display: 'none', 
                 ease: 'power1.in'
-            }, 0) // Start at the same time as previous animation
+            }, 0) 
 
-            // Animate text from bottom right
+            
             .from(text1.current, {
                 y: '50vh', 
                 x: '30vw', 
@@ -46,7 +45,7 @@ function T2() {
                 ease: 'power1.in'
             }, 0) 
 
-            // Continuous drop shadow effect
+           
             .to(imgRef.current, {
                 filter: 'drop-shadow(10px 10px 20px rgb(6, 182, 212))',
                 repeat: -1,
@@ -55,7 +54,7 @@ function T2() {
                 duration: 1
             }, 0)
 
-            // Scale image
+        
             .to(imgRef.current, {
                 scale:2, 
                 duration: 5,
@@ -75,7 +74,7 @@ function T2() {
          <div className='absolute w-1/2 z-30 bg-black h-screen right-0' ref={div2}/>
          <div className='absolute w-1/2 z-30 bg-black h-screen left-0' ref={div1}/>
         <div className='w-full flex justify-center items-center h-screen  overflow-hidden'>
-           {/* <T1/> */}
+
            <img src="./venom1.png" alt="" style={{filter: 'drop-shadow(10px 10px 20px rgb(239 68 68))'}} ref={imgRef}/>
            <img ref={imgRef2} src="./venom2.png" className='hidden' alt="" style={{filter: 'drop-shadow(10px 10px 20px rgb(239 68 68))'}} />
            <img ref={imgRef3} src="./venom3.png" className='hidden' alt="" style={{filter: 'drop-shadow(10px 10px 20px rgb(239 68 68))'}} />
