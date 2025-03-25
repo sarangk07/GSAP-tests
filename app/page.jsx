@@ -2,10 +2,12 @@
 
 
 
+
 export default function Home() {
 
 
   return (
+    <>
     <div className="flex flex-col justify-center bg-gradient-to-br from-cyan-700 to-rblack  items-center w-full h-screen">
       <h2 className="absolute top-5 text-4xl font-robotaur">GSAP</h2>
 
@@ -15,6 +17,6 @@ export default function Home() {
           <a className="p-4  font-robotaur bg-blue-500  text-white rounded hover:bg-blue-600 transition" href="https://gsap-tests.vercel.app/KaijuNo8" target="_blank">KaijuNo8 🔗</a>
       </div>
     </div>
-
+    </>
   );
 }
