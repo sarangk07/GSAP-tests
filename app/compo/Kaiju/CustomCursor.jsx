@@ -55,7 +55,7 @@ const CustomCursor = () => {
         return () => {
             window.removeEventListener("mousemove", moveCursor);
             window.removeEventListener("mousedown", handleClick);
-            document.body.style.cursor = ""; // Reset default cursor----
+            document.body.style.cursor = "";
             document.querySelectorAll("a, button, .hover-target").forEach(el => {
                 el.removeEventListener("mouseenter", handleMouseEnter);
                 el.removeEventListener("mouseleave", handleMouseLeave);
